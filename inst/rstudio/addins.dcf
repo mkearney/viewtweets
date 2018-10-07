@@ -1,0 +1,9 @@
+Name: View Home Timeline
+Description: View home user's timeline.
+Binding: view_timeline
+Interactive: true
+
+Name: View User Timeline
+Description: View tweets posted by given user.
+Binding: view_timeline_addin
+Interactive: true
