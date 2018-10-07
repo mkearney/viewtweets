@@ -8,6 +8,8 @@
 #' @return Saves a temporary HTML file.
 #' @export
 html_tweets <- function(x, title = NULL) {
+  x$text <- gsub("\\{", "VIEWTWEETS_open_BRACKET", x$text)
+  x$text <- gsub("\\{", "VIEWTWEETS_CLOSE_BRACKET", x$text)
   m <- tfse::gregexpr_(x$text, "https?://\\S+")
   links <- tfse::regmatches_(x$text, "https?://\\S+")
   regmatches(x$text, m) <- lapply(
@@ -36,6 +38,9 @@ html_tweets <- function(x, title = NULL) {
       "<h1 style='text-align:center'>{title}</h1>\n", x)
   }
   x <- sub("\\{body\\}", x, htmldoc)
+  x <- gsub("VIEWTWEETS_OPEN_BRACKET", "{", x)
+  x <- gsub("VIEWTWEETS_CLOSE_BRACKET", "}", x)
+
   tmp <- tempfile(fileext = ".html")
   writeLines(x, tmp)
   if (rstudioapi::isAvailable()) {
@@ -69,12 +74,14 @@ view_timeline <- function(user = NULL) {
 }
 
 
-view_timeline_addin = function() {
-  sys.source(pkg_file('scripts', 'timeline.R'))
-}
-
-
 pkg_file <- function (..., mustWork = TRUE) {
   system.file(..., package = "viewtweets", mustWork = mustWork)
 }
 
+view_user_addin <- function() {
+  sys.source(pkg_file('scripts', 'user-addin.R'))
+}
+
+view_home_addin <- function() {
+  sys.source(pkg_file('scripts', 'home-addin.R'))
+}

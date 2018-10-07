@@ -1,5 +1,5 @@
 Package: viewtweets
-Title: pkg
+Title: View Twitter Timelines
 Version: 0.0.1
 Authors@R: 
     person(given = "Michael W.",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "kearneymw@missouri.edu",
            comment = c(ORCID = "0000-0002-0730-4694"))
-Description: Describe pkg
+Description: Render temporary HTML files of Twitter timelines.
 License: GPL-3
 Encoding: UTF-8
 Langauge: en

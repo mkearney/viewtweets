@@ -10,10 +10,8 @@ local({
     )),
     server = function(input, output, session) {
       shiny::observeEvent(input$done, {
-        #if (is.null(input$user)) {
-        #  input$user <- rtweet:::home_user()
-        #}
-        viewtweets::view_timeline(input$user)
+
+        viewtweets:::view_timeline(input$user)
         shiny::stopApp()
       })
       shiny::observeEvent(input$cancel, {
@@ -21,6 +19,7 @@ local({
       })
     },
     stopOnCancel = TRUE,
-    viewer = shiny::dialogViewer('Twitter Timeline', height = 50)
+    viewer = shiny::dialogViewer('Twitter Timeline',
+      height = 50)
   )
 })
