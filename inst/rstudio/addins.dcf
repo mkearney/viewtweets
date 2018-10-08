@@ -1,9 +1,19 @@
-Name: View Home Timeline
+Name: View Twitter Home Timeline
 Description: View home user's timeline.
 Binding: view_home_addin
 Interactive: true
 
-Name: View User Timeline
+Name: View Twitter User Timeline
 Description: View tweets posted by given user.
 Binding: view_user_addin
+Interactive: true
+
+Name: View Twitter Search Results
+Description: View results from rtweet::search_tweets.
+Binding: view_search_addin
+Interactive: true
+
+Name: View Twitter User Favorites
+Description: View tweets favorited by given user.
+Binding: view_favs_addin
 Interactive: true

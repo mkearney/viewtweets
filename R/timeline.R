@@ -85,3 +85,4 @@ view_user_addin <- function() {
 view_home_addin <- function() {
   sys.source(pkg_file('scripts', 'home-addin.R'))
 }
+
