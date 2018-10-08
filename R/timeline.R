@@ -8,8 +8,8 @@
 #' @return Saves a temporary HTML file.
 #' @export
 html_tweets <- function(x, title = NULL) {
-  x$text <- gsub("\\{", "VIEWTWEETS_open_BRACKET", x$text)
-  x$text <- gsub("\\{", "VIEWTWEETS_CLOSE_BRACKET", x$text)
+  x$text <- gsub("\\{", "VIEWTWEETS_OPEN_BRACKET", x$text)
+  x$text <- gsub("\\}", "VIEWTWEETS_CLOSE_BRACKET", x$text)
   m <- tfse::gregexpr_(x$text, "https?://\\S+")
   links <- tfse::regmatches_(x$text, "https?://\\S+")
   regmatches(x$text, m) <- lapply(
