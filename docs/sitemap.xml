@@ -7,6 +7,12 @@
     <loc>https://viewtweets.mikewk.com/reference/html_tweets.html</loc>
   </url>
   <url>
+    <loc>https://viewtweets.mikewk.com/reference/view_favorites.html</loc>
+  </url>
+  <url>
+    <loc>https://viewtweets.mikewk.com/reference/view_search.html</loc>
+  </url>
+  <url>
     <loc>https://viewtweets.mikewk.com/reference/view_timeline.html</loc>
   </url>
 </urlset>

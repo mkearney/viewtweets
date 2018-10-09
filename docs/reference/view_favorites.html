@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Render tweets — html_tweets • viewtweets</title>
+<title>Render favorited tweets — view_favorites • viewtweets</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -32,9 +32,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Render tweets — html_tweets" />
+<meta property="og:title" content="Render favorited tweets — view_favorites" />
 
-<meta property="og:description" content="Render non-retweets as temporary HTML file" />
+<meta property="og:description" content="Render tweets favorited by a given user" />
 
 <meta property="og:image" content="https://viewtweets.mikewk.com/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -101,35 +101,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Render tweets</h1>
-    <small class="dont-index">Source: <a href='https://github.com/mkearney/viewtweets/blob/master/R/html.R'><code>R/html.R</code></a></small>
-    <div class="hidden name"><code>html_tweets.Rd</code></div>
+    <h1>Render favorited tweets</h1>
+    <small class="dont-index">Source: <a href='https://github.com/mkearney/viewtweets/blob/master/R/favorites.R'><code>R/favorites.R</code></a></small>
+    <div class="hidden name"><code>view_favorites.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Render non-retweets as temporary HTML file</p>
+    <p>Render tweets favorited by a given user</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>html_tweets</span>(<span class='no'>x</span>, <span class='kw'>title</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>view_favorites</span>(<span class='kw'>user</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>Timeline data returned by <a href='http://www.rdocumentation.org/packages/rtweet/topics/get_my_timeline'>get_my_timeline</a>.</p></td>
-    </tr>
-    <tr>
-      <th>title</th>
-      <td><p>Optional, title of rendered tweets document.</p></td>
+      <th>user</th>
+      <td><p>Name of user; used to determine favorites. If NULL (default),
+this returns the favorites of the authenticating user. If a user name is
+provided, the displayed tweets will have been favorited by that user.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Saves a temporary HTML file.</p>
+    <p>Favorited tweets will be displayed as temporary HTML file.</p>
     
 
   </div>
