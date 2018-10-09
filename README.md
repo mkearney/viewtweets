@@ -47,3 +47,13 @@ View tweets posted by a given user:
 <img src="inst/tools/readme/user.gif" />
 
 </p>
+
+## View search results
+
+Search Twitter and view matching results:
+
+<p style="align:center">
+
+<img src="inst/tools/readme/search.gif" />
+
+</p>
